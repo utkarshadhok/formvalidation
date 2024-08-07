@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form Validation</title>
+        <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Playwrite+BE+WAL:wght@100..400&display=swap"
+        rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Playwrite+BE+WAL:wght@100..400&family=Silkscreen:wght@400;700&display=swap"
+            rel="stylesheet">
+    </head>
+
+    <body id="bagg">
+        <h1 class="fontapple">Love coding?</h1>
+        <p class="fontbanana">Welcome to Utkarsha's form validation project!</p>
+        <p class="fontbanana">If you are interested in coding just as much as she is,</p>
+        <p class="fontbanana">fill out this form so she can help you grow!</p>
+        <form action="myform.php" name="myForm" onsubmit="return validateForm()" method="post" class="form-container">
+            <div class="formdesign container" id="name">
+                <label for="fname" class="fontbanana">Full Name:</label>
+                <input type="text" name="fname" required id="fname" class="fontbanana">
+                <b><span class="formerror red"></span></b>
+            </div>
+            <div class="formdesign container" id="email">
+                <label for="femail" class="fontbanana">Email:</label>
+                <input type="email" name="femail" required id="femail" class="fontbanana">
+                <b><span class="formerror red"></span></b>
+            </div>
+            <div class="formdesign container" id="contact">
+                <label for="fcontact" class="fontbanana">Contact:</label>
+                <input type="tel" name="fcontact" id="fcontact" class="fontbanana">
+                <b><span class="formerror red"></span></b>
+            </div>
+            <div class="formdesign container" id="why">
+                <label for="fwhy" class="fontbanana">Any previous experience:</label>
+                <input type="text" name="fwhy" id="fwhy" class="fontbanana">
+                <b><span class="formerror red"></span></b>
+            </div>
+            <div class="formdesign container" id="language">
+                <label for="flanguage" class="fontbanana">Preferred language:</label>
+                <input type="text" name="flanguage" id="flanguage" class="fontbanana">
+                <b><span class="formerror red"></span></b>
+            </div>
+            <div class="but-container">
+                <input class="but fontbanana" type="submit" value="Submit">
+            </div>
+        </form>
+        <script>
+            function clearErrors() {
+                const errors = document.getElementsByClassName('formerror');
+                for (let item of errors) {
+                    item.innerHTML = "";
+                }
+            }
+
+            function seterror(id, error) {
+                // sets error inside of the tag of id
+                const element = document.getElementById(id);
+                element.getElementsByClassName('formerror')[0].innerHTML = error;
+            }
+
+            function validateForm() {
+                clearErrors();
+                var returnval = true;
+
+                // perform validation and if the validation fails, set the value of returnval to false
+
+                var name = document.forms['myForm']['fname'].value;
+                if (name.length < 5) {
+                    seterror("name", "*Length of name is too short");
+                    returnval = false;
+                }
+
+                var contact = document.forms['myForm']['fcontact'].value;
+                if (contact.length != 10) {
+                    seterror("contact", "*Invalid number");
+                    returnval = false;
+                }
+
+                var why = document.forms['myForm']['fwhy'].value;
+                if (why.length > 50) {
+                    seterror("why", "*Input too long");
+                    returnval = false;
+                }
+
+                var language = document.forms['myForm']['flanguage'].value;
+                if (language.length > 30) {
+                    seterror("language", "*Input too long");
+                    returnval = false;
+                }
+
+                return returnval;
+            }
+        </script>
+    </body>
+
+</html>
+

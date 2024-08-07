@@ -1,0 +1,100 @@
+body {
+    padding: 0;
+    margin: 0; 
+}
+
+#bagg {
+    background-image: url('cute.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-color: midnightblue;
+    min-height: 100vh; 
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formdesign {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+.formdesign label {
+    margin-bottom: 5px;
+}
+
+.formdesign input {
+    width: 500px;
+    height: 45px;
+    max-width: 700px;
+    border: 3px solid midnightblue;
+    padding: 12px 15px;
+    font-size: 22px;
+    color: black;
+}
+
+.formdesign input.fontbanana {
+    font-family: "Playwrite BE WAL", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: black;
+    font-size: 20px;
+}
+
+.red {
+    color: red;
+    font-size: 16px;
+    margin-top: 5px;
+    font-family: sans-serif;
+}
+
+.fontapple {
+    font-family: "Silkscreen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 72px;
+}
+
+.but-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.but {
+    border: 3px solid midnightblue;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    font-size: 22px;
+    margin-bottom: 250px;
+}
+
+.fontbanana {
+  font-family: "Playwrite BE WAL", cursive;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    font-size: 24px;
+    margin: 5px;
+}
